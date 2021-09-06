@@ -9,20 +9,13 @@ public class FizzBuzz {
             printFizzBuzzForValue(i);
         }
 
+        System.out.println("\n");
+
         // Alt: 2 SWITCH, mindre än 15 alternativ
         for (int i = 1; i <= 100; i++) {
-            printFizzBuzzForValueWithSwitch(i);
+            System.out.print(printFizzBuzzForValueWithSwitch(i));
         }
 
-    }
-
-    private static String printFizzBuzzForValueWithSwitch(int i) {
-        return switch (i % 15) {
-            case 0 -> "FizzBuzz";
-            case 3, 6, 9, 12 -> "Fizz";
-            case 5, 10 -> "Buzz";
-            default -> "" + i; // Integer.toString(i);
-        }
     }
 
     private static void printFizzBuzzForValue(int i) {
@@ -34,5 +27,14 @@ public class FizzBuzz {
             System.out.print("Buzz, ");
         else
             System.out.print(i + ", ");
+    }
+
+    private static String printFizzBuzzForValueWithSwitch(int i) {
+        return switch (i % 15) {
+            case 0 -> "FizzBuzz, ";
+            case 3, 6, 9, 12 -> "Fizz, ";
+            case 5, 10 -> "Buzz, ";
+            default -> "" + i + ", "; // Integer.toString(i);
+        };
     }
 }
